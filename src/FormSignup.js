@@ -19,6 +19,18 @@ const FormSignup = () => {
                         className='form-input' 
                         placeholder='Enter your name'/>
                 </div>
+                <div className='form-inputs'>
+                    <label htmlFor='e-mail' 
+                    className='form-lable'>
+                        e-mail
+                    </label>
+                    <input
+                        id='e-mail'
+                        type='text' 
+                        name='username' 
+                        className='form-input' 
+                        placeholder='Enter your name'/>
+                </div>
             </form>
         </div>
     )
