@@ -8,11 +8,16 @@ const FormSignup = () => {
                     Account create by filling informaion below
                 </h2>
                 <div className='form-inputs'>
-                    <label htmlFor='username' className='form-lable'>
-                        <input type='text' name='username' className='form-input'>
-                            
-                        </input>
+                    <label htmlFor='username' 
+                    className='form-lable'>
+                        User Name
                     </label>
+                    <input
+                        id='User Name'
+                        type='text' 
+                        name='username' 
+                        className='form-input' 
+                        placeholder='Enter your name'/>
                 </div>
             </form>
         </div>
