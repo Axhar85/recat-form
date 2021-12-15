@@ -9,7 +9,7 @@ const useForm = validateInfo => {
         password2 :''
     });
 
-    const [error, setError] = useState({});
+    const [errors, setErrors] = useState({});
 
     const handleChange = e => {
         const {name, value} = e.target
@@ -19,7 +19,7 @@ const useForm = validateInfo => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        setErrors(validateInfo(values))
+        setErrors(validateInfo(values));
     }
     return { handleChange, values, handleSubmit, errors };
 }
