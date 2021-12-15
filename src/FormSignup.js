@@ -2,10 +2,10 @@ import React from 'react'
 import useForm from './useForm'
 
 const FormSignup = () => {
-    const {handleChange , values} = useForm();
+    const {handleChange , values, handleSubmit} = useForm();
     return (
         <div className='form-content-right '>
-            <form className='form'>
+            <form className='form' onSubmit={handleSubmit}>
                 <h2>
                     Account create by filling informaion below
                 </h2>

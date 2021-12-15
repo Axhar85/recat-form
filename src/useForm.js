@@ -14,7 +14,11 @@ const useForm = () => {
         const {name, value} = e.target
         setValues({...values,[name]: value});
     };
-    return { handleChange, values };
+
+    const handleSubmit = e => {
+        e.preventDefault();
+    }
+    return { handleChange, values, handleSubmit };
 }
 
 export default useForm;
