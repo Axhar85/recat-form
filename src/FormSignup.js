@@ -38,6 +38,7 @@ const FormSignup = () => {
                         placeholder='Enter your email'
                         value={values.email}
                         onChange={handleChange}/>
+                        {errors.email && <p>{errors.email}</p>}
                 </div>
                 <div className='form-inputs'>
                     <label htmlFor='password' 
@@ -52,6 +53,7 @@ const FormSignup = () => {
                         placeholder='Enter your password'
                         value={values.password}
                         onChange={handleChange}/>
+                        {errors.password && <p>{errors.password}</p>}
                 </div>
                 <div className='form-inputs'>
                     <label htmlFor='password2' 
@@ -66,6 +68,7 @@ const FormSignup = () => {
                         placeholder='Enter your password2'
                         value={values.password2}
                         onChange={handleChange}/>
+                        {errors.password2 && <p>{errors.password2}</p>}
                 </div>
                 <button className='form-input-btn' type='submit'>
                     Sign-up
