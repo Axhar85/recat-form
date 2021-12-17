@@ -11,7 +11,7 @@ const useForm = validateInfo => {
 
     const [errors, setErrors] = useState({});
 
-    const [isSubmit, setIsSubmit] = ({false})
+    const [isSubmiting, setIsSubmiting] = useState(false);
 
     const handleChange = e => {
         const {name, value} = e.target
@@ -22,7 +22,7 @@ const useForm = validateInfo => {
         e.preventDefault();
 
         setErrors(validateInfo(values));
-        setIsSubmit(true);
+        setIsSubmiting(true);
     }
     return { handleChange, values, handleSubmit, errors };
 }
