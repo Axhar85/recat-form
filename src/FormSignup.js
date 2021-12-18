@@ -3,8 +3,8 @@ import useForm from './useForm'
 import validateInfo from './validateInfo';
 import './Form.css';
 
-const FormSignup = () => {
-    const {handleChange , values, handleSubmit, errors} = useForm( validateInfo);
+const FormSignup = (submitForm) => {
+    const {handleChange , values, handleSubmit, errors} = useForm( submitForm, validateInfo);
     return (
         <div className='form-content-right '>
             <form className='form' onSubmit={handleSubmit}>
