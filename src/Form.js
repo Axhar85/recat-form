@@ -1,6 +1,7 @@
-import React from 'react'
-import FormSignup from './FormSignup'
-import { useState } from 'react'
+import React from 'react';
+import FormSignup from './FormSignup';
+import { useState } from 'react';
+import FormSuccess from './FormSuccess';
 
 
 const Form = () => {
@@ -12,7 +13,7 @@ const Form = () => {
 }
     return (
         <div>
-            <FormSignup />
+        
             {!isSubmitted ? <FormSignup submitForm=
             {submitForm}/> : <FormSuccess />}
         </div>
