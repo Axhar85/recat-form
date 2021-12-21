@@ -27,7 +27,9 @@
     );
     border-radius: 10px 0 0 10px;
     position: relative;
-  }.form-img {
+  }
+  
+  .form-img {
     width: 80%;
     height: 80%;
     position: absolute;
@@ -35,7 +37,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
+
+  .form-img-2 {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 
   
