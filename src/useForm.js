@@ -1,38 +1,40 @@
-import { useState, useEffect } from "react";
-import validateInfo from "./validateInfo";
+import { useState, useEffect } from 'react';
 
-const useForm = (callback, validateInfo) => {
-    const [values, setValues] = useState({
-        username : '',
-        email : '',
-        password : '',
-        password2 :''
+const useForm = (callback, validate) => {
+  const [values, setValues] = useState({
+    username: '',
+    email: '',
+    password: '',
+    password2: ''
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value
     });
+  };
 
-    const [errors, setErrors] = useState({});
+  const handleSubmit = e => {
+    e.preventDefault();
 
-    const [isSubmitting, setIsSubmiting] = useState(false);
+    setErrors(validate(values));
+    setIsSubmitting(true);
+  };
 
-    const handleChange = e => {
-        const {name, value} = e.target
-        setValues({...values,[name]: value});
-    };
+  useEffect(
+    () => {
+      if (Object.keys(errors).length === 0 && isSubmitting) {
+        callback();
+      }
+    },
+    [errors]
+  );
 
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        setErrors(validateInfo(values));
-        setIsSubmiting(true);
-    };
-    useEffect(
-        () => {
-            if (Object.keys(errors).length === 0 && isSubmitting) {
-                callback();
-              }
-        },
-        [errors]
-      );
-    return { handleChange, values, handleSubmit, errors };
-}
+  return { handleChange, handleSubmit, values, errors };
+};
 
 export default useForm;
